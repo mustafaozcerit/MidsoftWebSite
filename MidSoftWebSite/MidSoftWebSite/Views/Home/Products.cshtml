@@ -1,0 +1,131 @@
+﻿@using MidSoftWebSite.Models.DB
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/MidLayout.cshtml";
+    var product = ViewData["Products"] as IList<Product>;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+    <p class="" style="margin-top:5%"></p>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Ürünler</h2>
+            </div>
+
+            <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">Bütün Ürünler</li>
+                <li data-filter=".filter-PrizmaERP">Prizma ERP</li>
+                <li data-filter=".filter-LoRa">LoRa</li>
+                <li data-filter=".filter-CallCenter">Call Center</li>
+                <li data-filter=".filter-DamacanaTakipSistemi">Damacana Takip Sistemi</li>
+                <li data-filter=".filter-YemekhaneTakipSistemi">Yemekhane Takip Sistemi</li>
+                <li data-filter=".filter-DijitalKalem">Dijital Kalem</li>
+                <li data-filter=".filter-BayiTakip">Bayi Takip</li>
+            </ul>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                @*@{
+                    foreach (var item in product)
+                    {
+                        <div class="col-md-3 portfolio-item filter-PrizmaERP">
+                            <div class="portfolio-img"><img src="~/img/ürünler/malzeme.png" class="img-fluid" alt=""></div>
+                            <div class="portfolio-info">
+                                <h4>Prizma ERP</h4>
+                                <p>Prizma ERP</p>
+                                <a href="~/img/ürünler/malzeme.png" data-gall="portfolioGallery" class="venobox preview-link" title="PrizmaERP"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                                @Html.Action("", "ControllerName", new { pk = "00", rk = "00" });
+                            </div>
+                        </div>
+                    }
+                }*@
+
+                <div class="col-md-3 portfolio-item filter-PrizmaERP">
+                    <div class="portfolio-img"><img src="~/img/ürünler/malzeme.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Prizma ERP</h4>
+                        <p>Prizma ERP</p>
+                        <a href="~/img/ürünler/malzeme.png" data-gall="portfolioGallery" class="venobox preview-link" title="PrizmaERP"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                        @*@Html.Action("", "ControllerName", new { pk = "00", rk = "00" });*@
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-LoRa">
+                    <div class="portfolio-img"><img src="~/img/ürünler/Lora.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>LoRa</h4>
+                        <p>LoRa</p>
+                        <a href="~/img/ürünler/Lora.png " data-gall="portfolioGallery" class="venobox preview-link" title="LoRa"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-CallCenter">
+                    <div class="portfolio-img"><img src="~/img/ürünler/cagrimerkezi.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Call Center</h4>
+                        <p>Call Center</p>
+                        <a href="~/img/ürünler/cagrimerkezi.png" data-gall="portfolioGallery" class="venobox preview-link" title="CallCenter"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-DamacanaTakipSistemi">
+                    <div class="portfolio-img"><img src="~/img/ürünler/damacanatakipsistemi.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Damacana Takip Sistemi</h4>
+                        <p>Damacana Takip Sistemi</p>
+                        <a href="~/img/ürünler/damacanatakipsistemi.png" data-gall="portfolioGallery" class="venobox preview-link" title="DamacanaTakipSistemi"><i class="bx bx-plus"></i></a>
+                        <a asp-area="" asp-controller="Home" asp-action="UrunDetay" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-YemekhaneTakipSistemi">
+                    <div class="portfolio-img"><img src="~/img/ürünler/yemekhanetakip.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Yemekhane Takip Sistemi</h4>
+                        <p>Yemekhane Takip Sistemi</p>
+                        <a href="~/img/ürünler/yemekhanetakip.png" data-gall="portfolioGallery" class="venobox preview-link" title="YemekhaneTakipSistemi"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-DijitalKalem">
+                    <div class="portfolio-img"><img src="~/img/ürünler/dijitalkalem.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Dijital Kalem</h4>
+                        <p>Dijital Kalem</p>
+                        <a href="~/img/ürünler/dijitalkalem.png" data-gall="portfolioGallery" class="venobox preview-link" title="DijitalKalem"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 portfolio-item filter-BayiTakip">
+                    <div class="portfolio-img"><img src="~/img/ürünler/bayitakip.png" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>Bayi Takip</h4>
+                        <p>Bayi Takip</p>
+                        <a href="~/img/ürünler/bayitakip.png" data-gall="portfolioGallery" class="venobox preview-link" title="BayiTakip"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="Detaylar"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
+
+
