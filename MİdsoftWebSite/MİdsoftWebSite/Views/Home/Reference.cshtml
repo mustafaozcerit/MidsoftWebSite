@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Referance>
+@{
+    ViewData["Title"] = "Referance";
+    Layout = "~/Views/Shared/MidLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    </title>
+</head>
+<body>
+    <h2 class="" style="margin-top:6%" align-items-center></h2>
+    <div class="section-title">
+        <h2>Referanslar</h2>
+    </div>
+    <main id="main">
+        <!-- ======= Cliens Section ======= -->
+        <section id="cliens" class="cliens section-bg">
+            <div class="container">
+                <div class="row" data-aos="zoom-in">
+                    @foreach (var item in Model)
+                    {
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="data:image;base64,@System.Convert.ToBase64String(item.Fotograf)" alt="" class="img-fluid" />
+                    </div>
+                    }
+
+                    @*<div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/tek metal logo.png" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/landeLogo.png" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/meçplastiklogo.png" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/gknlogo.png" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/çınalogo.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-6 d-flex align-items-center justify-content-center">
+                        <img src="~/img/eptalogo.png" class="img-fluid" alt="">
+                    </div>*@
+                </div>
+            </div>
+        </section><!-- End Cliens Section -->
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+﻿@using MİdsoftWebSite.Models;
+@model IEnumerable<AboutU>
+@{
+    ViewData["Title"] = "Hakkımızda";
+    Layout = "~/Views/Shared/MidLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Midsoft Company</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src=""></script>
+    <style>
+        #baslik {
+            /*color:red;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="" style="margin-top:8%" align-items-center> </h2>
+        <div class="section-title">
+            <h2>Hakkımızda</h2>
+        </div>
+        <div class="col-md-12">
+            @*<div data-aos="zoom-in">
+                <div class="align-items-center justify-content-center">*@
+            <div class="row">
+                <img src="~/img/atap.png" height="1000" class="img-fluid">
+                <br />
+                <br />
+                @*<img src="data:image;base64,@System.Convert.ToBase64String(midsoftLogo.Fotograf)" width="100%" alt="" class="img-fluid" />*@
+                @foreach (var item in Model)
+                {
+                    <h2 class="col-sm-12 col-md-12 text-center" id="baslik">@item.Baslik</h2>
+                    <ul>
+                        @if (item.Icerik != null)
+                        {
+                            <li>
+                                <p class="col-sm-9 col-md-12">@item.Icerik</p>
+                            </li>
+                        }
+                        @if (item.Icerik2 != null)
+                        {
+                            <li>
+                                <p class="col-sm-9 col-md-12">@item.Icerik2</p>
+
+                            </li>
+                        }
+                        @if (item.Icerik3 != null)
+                        {
+                            <li>
+                                <p class="col-sm-9 col-md-12">@item.Icerik3</p>
+
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+            <br />
+            <br />
+            @*<dl class="row">
+                    <dt class="col-sm-3">Midsoft Hakkında</dt>
+                    <dd class="col-sm-9">Midsoft L.T.D. 2016 yılında Eskişehir Anadolu Teknoloji Araştırma Parkı'nda faaliyetlerine başlamış, bilişim sektöründe firmalara ve sektörlere özel çözümler sunmaktadır. <br /> Bilişim sektöründe öncü ve yenilikçi bir firma olma vizyonuyla Midsoft L.T.D. müşterilerinin ihtiyaçlarını giderecek çözümleri donanımlı ve alanında uzman kadrosuyla gerçekleştirmektedir </dd>
+                    <dt class="col-sm-3">Vizyonumuz</dt>
+                    <dd class="col-sm-9">
+                        <p>Bilişim sektöründe ülkemizde faaliyet gösteren işletmeler içerisinde lider, öncü ve yenilikçi bir firma olmak, dünya çapındaki firmalarla da rekabet edebilir düzeye gelmek.</p>
+                    </dd>
+                    <dt class="col-sm-3">Misyonumuz</dt>
+                    <dd class="col-sm-9">İşletmelere faaliyet gösterdikleri sektörlere özel olarak çözümler geliştirerek, iş süreçlerini kendi teknoloji ve yazılımlarımız sayesinde yönetilebilir hale getirmek.<br />Geliştirdiğimiz çözümleri kullanan işletmelerin çözümlerimiz sayesinde üretim ve/ve ya hizmet kapasitesini arttırarak ülkemiz ekonomisine daha fazla katkıda bulunmasını sağlamak.</dd>
+                </dl>*@
+            @*</div>
+                </div>*@
+
+            @*<div class="row">
+                    <div class="col-md-12">
+                        <h2 class="" style="margin-top:6%">Midsoft Hakkında</h2>
+                        <p>Midsoft L.T.D. 2016 yılında Eskişehir Anadolu Teknoloji Araştırma Parkı'nda faaliyetlerine başlamış, bilişim sektöründe firmalara ve sektörlere özel çözümler sunmaktadır. </p><br />
+                        <p>Bilişim sektöründe öncü ve yenilikçi bir firma olma vizyonuyla Midsoft L.T.D. müşterilerinin ihtiyaçlarını giderecek çözümleri donanımlı ve alanında uzman kadrosuyla gerçekleştirmektedir</p><br />
+
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <h2>Vizyonumuz</h2>
+                    <p>Bilişim sektöründe ülkemizde faaliyet gösteren işletmeler içerisinde lider, öncü ve yenilikçi bir firma olmak, dünya çapındaki firmalarla da rekabet edebilir düzeye gelmek.</p><br />
+                    <h2>Misyonumuz</h2>
+                    <p>İşletmelere faaliyet gösterdikleri sektörlere özel olarak çözümler geliştirerek, iş süreçlerini kendi teknoloji ve yazılımlarımız sayesinde yönetilebilir hale getirmek.</p><br />
+                    <p> Geliştirdiğimiz çözümleri kullanan işletmelerin çözümlerimiz sayesinde üretim ve/ve ya hizmet kapasitesini arttırarak ülkemiz ekonomisine daha fazla katkıda bulunmasını sağlamak.</p>
+                </div>*@
+        </div>
+
+    </div>
+
+</body>
+</html>
+

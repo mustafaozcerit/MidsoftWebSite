@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/MidLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+    <p class="" style="margin-top:5%"></p>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+            @{
+                string filter = "*";
+                } 
+            <div class="section-title">
+                <h2>Ürünler</h2>
+                <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">Bütün Ürünler</li>
+                    @foreach (var item in Model)
+                    {
+                        filter = item.Isim.Trim().Replace(" ", string.Empty);
+                        <li data-filter=".filter-@filter">@filter</li>
+                    }
+                </ul>
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    @foreach (var item in Model)
+                    {
+                        filter = item.Isim.Trim().Replace(" ", string.Empty);
+                        <div class="col-md-3 portfolio-item filter-@filter">
+                            <div class="portfolio-img">
+                                <img src="data:image;base64,@System.Convert.ToBase64String(item.Fotograf)"  alt="" class="img-fluid" />
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>@item.Isim</h4>
+                                @*<p>@item.Isim</p>*@ 
+                                <a href="data:image;base64,@System.Convert.ToBase64String(item.Fotograf)" data-gall="portfolioGallery" class="venobox preview-link" title="Resmi Büyüt"><i class="bx bx-search"></i></a>
+                                @*<a class="details-link" title="Detaylar"><i class="bx bx-detail">@Html.ActionLink(filter, "ProductDetail", new { Oid = item.Oid })</i></a>*@
+                                <a class="bx bx-message-alt-detail">@Html.ActionLink("Ürün Detayları", "ProductDetail", new { Oid = item.Oid })</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+</section>
+</body>
+</html>
+
+
